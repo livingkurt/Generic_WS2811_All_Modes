@@ -52,7 +52,12 @@ SimplePatternList gPatterns = {
     // c2c_rainbow_sweep,
     // white_rainbow,
     // all_fade,
-    shooting_stars,
+    // shooting_white_star,
+    // shooting_star_white_sin_bnf,
+    // shooting_star_white_mirror
+    // shooting_star_rainbow,
+    // shooting_star_rainbow_sin_bnf,
+    shooting_star_rainbow_mirror,
     // c2c_rainbow_on_off_sweep,
     // all_fade_rainbow,
 };
