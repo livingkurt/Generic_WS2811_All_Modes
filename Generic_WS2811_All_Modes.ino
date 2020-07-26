@@ -11,7 +11,7 @@
 // Number of LEDs Used
 #define NUM_LEDS 200
 // The Order of RGB was wired on the chip
-#define COLOR_ORDER GBR
+#define COLOR_ORDER RGB
 // Interval Between Mode Changes
 #define INTERVAL 10
 // Choose Random or Not Random Mode Changes
@@ -47,7 +47,9 @@ SimplePatternList gPatterns = {
     // split_rainbow_4,
     // split_rainbow_8,
     // split_rainbow_10,
-    split_rainbow_20,
+    // split_rainbow_20,
+    // split_color_palette_2,
+    split_color_palette_10,
     // c2c_white,
     // sparkle_rainbow_random,
     // sparkle_white_rainbow_all_fade,
