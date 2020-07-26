@@ -2,8 +2,8 @@
 
 #define RATE_30 10
 #define GAP_30 10
-#define SPLIT_VALUE 2
-int ROW_30 = NUM_LEDS / SPLIT_VALUE;
+#define SPLIT_VALUE_30 2
+int ROW_30 = NUM_LEDS / SPLIT_VALUE_30;
 int start_hue_30;
 int delta_hue_30 = 10;
 
@@ -18,14 +18,4 @@ void split_rainbow_2()
     start_hue_30 += delta_hue_30;
   };
   FastLED.show();
-}
-
-int forwards_30(int placement, int pos)
-{
-  return (ROW_30 * placement) + pos;
-}
-
-int backwards_30(int placement, int pos)
-{
-  return ROW_30 * placement - 1 - pos;
 }

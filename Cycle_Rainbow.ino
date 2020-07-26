@@ -4,7 +4,7 @@
 int start_hue_1;
 int delta_hue_1 = 3;
 
-void rainbow_cycle()
+void cycle_rainbow()
 {
   Serial.println("pattern_1");
   start_hue_1 = -1 * millis() / RATE_1;

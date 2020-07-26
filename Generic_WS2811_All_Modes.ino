@@ -37,11 +37,9 @@ void setup()
 typedef void (*SimplePatternList[])();
 
 SimplePatternList gPatterns = {
-    // rainbow_cycle,
-    // c2c_rainbow_fade,
-    // sparkle_white,
-    // color_palette,
-    // rainbow_pulse,
+    // cycle_rainbow,
+    // cycle_rainbow_desaturated,
+    // cycle_color_palette
     // split_rainbow,
     // split_rainbow_2,
     // split_rainbow_4,
@@ -50,29 +48,32 @@ SimplePatternList gPatterns = {
     // split_rainbow_20,
     // split_color_palette_2,
     // split_color_palette_4,
+    flash_rainbow,
     // c2c_white,
-    // c2c_rainbow_sweep,
+    // c2c_rainbow_fade,
+    // c2c_rainbow_on_off_sweep,
+    // sparkle_white,
     // sparkle_rainbow_random,
     // sparkle_white_rainbow_all_fade,
     // sparkle_rainbow_saturation,
     // sparkle_rainbow_no_off,
-    // sparkle_white_rainbow,
     // sparkle_white_no_off,
     // sparkle_rainbow_no_off_all,
     // all_fade,
+    // all_fade_rainbow,
     // shooting_star_white,
     // shooting_star_white_sin_bnf,
-    // shooting_star_white_mirror
+    // shooting_star_white_mirror,
     // shooting_star_rainbow,
-    shooting_star_rainbow_saturation,
+    // shooting_star_rainbow_saturation,
     // shooting_star_rainbow_sin_bnf,
     // shooting_star_rainbow_mirror,
     // shooting_star_rainbow_multi_sin_bnf,
     // shooting_star_rainbow_multi_single_fade_sin_bnf,
     // shooting_star_rainbow_multi_all_fade_sin_bnf,
     // shooting_star_white_multi_sin_bnf,
-    // c2c_rainbow_on_off_sweep,
-    // all_fade_rainbow,
+    // quadwave,
+
 };
 
 int num_modes = (sizeof(gPatterns) / sizeof(gPatterns[0]));
@@ -107,4 +108,14 @@ void nextPattern()
     Serial.println(random(num_modes));
     gCurrentPatternNumber = (gCurrentPatternNumber + 1) % ARRAY_SIZE(gPatterns);
   }
+}
+
+int forwards(int length, int placement, int pos)
+{
+  return (length * placement) + pos;
+}
+
+int backwards(int length, int placement, int pos)
+{
+  return length * placement - 1 - pos;
 }

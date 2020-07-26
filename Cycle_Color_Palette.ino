@@ -12,7 +12,7 @@ int start_index;
 int index_interval = 5;
 
 // DEFINE_GRADIENT_PALETTE( my_p ) {
-//   0,     255,  50,  0, 
+//   0,     255,  50,  0,
 // 255,   0,0,255 };
 
 // Gradient palette "hsv_gp", originally from
@@ -91,38 +91,35 @@ int index_interval = 5;
 // converted for FastLED with gammas (2.6, 2.2, 2.5)
 // Size: 64 bytes of program space.
 
-DEFINE_GRADIENT_PALETTE( jet_gp ) {
-    0,   0,  0,123,
-   17,   0,  0,255,
-   33,   0, 11,255,
-   51,   0, 55,255,
-   68,   0,135,255,
-   84,   0,255,255,
-  102,   6,255,255,
-  119,  41,255,123,
-  135, 120,255, 44,
-  153, 255,255,  7,
-  170, 255,255,  0,
-  186, 255,135,  0,
-  204, 255, 55,  0,
-  221, 255, 11,  0,
-  237, 255,  0,  0,
-  255, 120,  0,  0};
-
+DEFINE_GRADIENT_PALETTE(jet_gp){
+    0, 0, 0, 123,
+    17, 0, 0, 255,
+    33, 0, 11, 255,
+    51, 0, 55, 255,
+    68, 0, 135, 255,
+    84, 0, 255, 255,
+    102, 6, 255, 255,
+    119, 41, 255, 123,
+    135, 120, 255, 44,
+    153, 255, 255, 7,
+    170, 255, 255, 0,
+    186, 255, 135, 0,
+    204, 255, 55, 0,
+    221, 255, 11, 0,
+    237, 255, 0, 0,
+    255, 120, 0, 0};
 
 CRGBPalette16 myPal = jet_gp;
 
-void color_palette() 
+void cycle_color_palette()
 {
   Serial.println("pattern_1");
   start_index = -1 * millis() / RATE_16;
   for (int i = 0; i < NUM_LEDS; i++)
 
   {
-    leds[i] = ColorFromPalette( myPal, start_index, BRIGHTNESS, LINEARBLEND);
+    leds[i] = ColorFromPalette(myPal, start_index, BRIGHTNESS, LINEARBLEND);
     start_index += index_interval;
   };
   FastLED.show();
-  
-  
 }

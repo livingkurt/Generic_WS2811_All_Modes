@@ -34,21 +34,11 @@ void split_color_palette_4()
     leds[i] = ColorFromPalette(myPal_34, start_index_34, BRIGHTNESS, LINEARBLEND);
     for (int h = 2; h <= SPLIT_VALUE_34 - 2; h += 2)
     {
-      leds[backwards_34(h, i)] = ColorFromPalette(myPal_34, start_index_34, BRIGHTNESS, LINEARBLEND);
-      leds[forwards_34(h, i)] = ColorFromPalette(myPal_34, start_index_34, BRIGHTNESS, LINEARBLEND);
+      leds[backwards(ROW_34, h, i)] = ColorFromPalette(myPal_34, start_index_34, BRIGHTNESS, LINEARBLEND);
+      leds[forwards(ROW_34, h, i)] = ColorFromPalette(myPal_34, start_index_34, BRIGHTNESS, LINEARBLEND);
     }
     leds[NUM_LEDS - 1 - i] = ColorFromPalette(myPal_34, start_index_34, BRIGHTNESS, LINEARBLEND);
     start_index_34 += index_interval_34;
   };
   FastLED.show();
-}
-
-int forwards_34(int placement, int pos)
-{
-  return (ROW_34 * placement) + pos;
-}
-
-int backwards_34(int placement, int pos)
-{
-  return ROW_34 * placement - 1 - pos;
 }
