@@ -5,7 +5,7 @@
 int start_hue_5;
 int delta_hue_5 = 5;
 
-void sparkle_rainbow()
+void sparkle_rainbow_all_fade()
 {
   start_hue_5 = -1 * millis() / RATE_5;
   Serial.println("pattern_5");

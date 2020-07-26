@@ -5,7 +5,7 @@
 int start_hue_18;
 int delta_hue_18 = 5;
 
-void sparkle_no_off_rainbow()
+void sparkle_rainbow_no_off()
 {
   start_hue_18 = -1 * millis() / RATE_18;
   Serial.println("pattern_18");

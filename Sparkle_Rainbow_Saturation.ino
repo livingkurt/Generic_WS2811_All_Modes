@@ -5,7 +5,7 @@
 int start_hue_19;
 int delta_hue_19 = 5;
 
-void sparkle_saturation_rainbow()
+void sparkle_rainbow_saturation()
 {
   start_hue_19 = -1 * millis() / RATE_19;
   Serial.println("pattern_19");

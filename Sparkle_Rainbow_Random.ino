@@ -2,7 +2,7 @@
 #define STROBE_5 0.5
 #define GAP_5 0
 
-void sparkle_rand_rainbow()
+void sparkle_rainbow_random()
 {
   Serial.println("pattern_5");
   for (int i = 0; i < NUM_LEDS; i++)

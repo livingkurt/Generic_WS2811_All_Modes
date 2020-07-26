@@ -3,7 +3,7 @@
 int start_hue_11;
 int delta_hue_11 = 20;
 
-void sparkle_white_rainbow()
+void sparkle_white_rainbow_all_fade()
 {
   delta_hue_11 = 20;
   start_hue_11 = -1 * millis() / RATE_11;
