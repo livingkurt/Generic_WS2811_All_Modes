@@ -24,7 +24,7 @@ DEFINE_GRADIENT_PALETTE(jet_gp_34){
 
 CRGBPalette16 myPal_34 = jet_gp_34;
 
-void split_color_palette_10()
+void split_color_palette_4()
 {
   Serial.println("pattern_34");
   start_index_34 = -1 * millis() / RATE_34;
