@@ -9,7 +9,7 @@
 // LED Chip Type
 #define LED_TYPE WS2811
 // Number of LEDs Used
-#define NUM_LEDS 200
+#define NUM_LEDS 50
 // The Order of RGB was wired on the chip
 #define COLOR_ORDER RGB
 // Interval Between Mode Changes
@@ -37,42 +37,54 @@ void setup()
 typedef void (*SimplePatternList[])();
 
 SimplePatternList gPatterns = {
+    // all_fade_rainbow,
+    // all_fade_white,
+
+    // cycle_color_palette,
     // cycle_rainbow,
     // cycle_rainbow_desaturated,
-    // cycle_color_palette
+
+    // flash_rainbow,
+
+    // shooting_star_rainbow,
+    // shooting_star_rainbow_mirror,
+    // shooting_star_rainbow_multi_all_fade_speed_control_bnf,
+    // shooting_star_rainbow_multi_single_fade_speed_control_bnf,
+    // shooting_star_rainbow_saturation,
+    // shooting_star_rainbow_speed_control_bnf,
+
+    // shooting_star_white,
+    // shooting_star_white_mirror,
+    // shooting_star_white_multi_speed_control_bnf,
+    // shooting_star_white_speed_control_bnf,
+
+    // sparkle_rainbow_all_fade,
+    // sparkle_rainbow_no_off,
+    // sparkle_rainbow_no_off_all,
+    // sparkle_rainbow_random,
+    // sparkle_rainbow_saturation,
+
+    // sparkle_white,
+    // sparkle_white_no_off,
+    // sparkle_white_rainbow_all_fade,
+
+    // split_color_palette_2,
+    // split_color_palette_4,
+
     // split_rainbow,
     // split_rainbow_2,
     // split_rainbow_4,
     // split_rainbow_8,
     // split_rainbow_10,
     // split_rainbow_20,
-    // split_color_palette_2,
-    // split_color_palette_4,
-    flash_rainbow,
-    // c2c_white,
-    // c2c_rainbow_fade,
-    // c2c_rainbow_on_off_sweep,
-    // sparkle_white,
-    // sparkle_rainbow_random,
-    // sparkle_white_rainbow_all_fade,
-    // sparkle_rainbow_saturation,
-    // sparkle_rainbow_no_off,
-    // sparkle_white_no_off,
-    // sparkle_rainbow_no_off_all,
-    // all_fade,
-    // all_fade_rainbow,
-    // shooting_star_white,
-    // shooting_star_white_sin_bnf,
-    // shooting_star_white_mirror,
-    // shooting_star_rainbow,
-    // shooting_star_rainbow_saturation,
-    // shooting_star_rainbow_sin_bnf,
-    // shooting_star_rainbow_mirror,
-    // shooting_star_rainbow_multi_sin_bnf,
-    // shooting_star_rainbow_multi_single_fade_sin_bnf,
-    // shooting_star_rainbow_multi_all_fade_sin_bnf,
-    // shooting_star_white_multi_sin_bnf,
-    // quadwave,
+
+    // split_shooting_star_rainbow,
+    // split_shooting_star_rainbow_4,
+    // split_shooting_star_rainbow_10,
+    split_shooting_star_white_10,
+
+    // flow_rainbow,
+    // flow_color_palette,
 
 };
 
@@ -118,4 +130,14 @@ int forwards(int length, int placement, int pos)
 int backwards(int length, int placement, int pos)
 {
   return length * placement - 1 - pos;
+}
+
+void hold(int period)
+{
+  unsigned long time_now = 0;
+  time_now = millis();
+  while (millis() < time_now + period)
+  {
+    // FastLED.show();
+  }
 }

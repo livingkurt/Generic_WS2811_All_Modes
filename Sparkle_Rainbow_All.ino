@@ -1,14 +1,12 @@
-// Pattern 5
-#define STROBE_5 20
-#define GAP_5 0
-#define RATE_5 10
-int start_hue_5;
-int delta_hue_5 = 5;
+
 
 void sparkle_rainbow_all_fade()
 {
-  start_hue_5 = -1 * millis() / RATE_5;
-  Serial.println("pattern_5");
+  int strobe = 20;
+  int rate = 10;
+  int start_hue;
+  int delta_hue = 5;
+  start_hue = -1 * millis() / rate;
   for (int i = 0; i < NUM_LEDS; i++)
   {
     for (int i = 0; i < 10; i++)
@@ -20,16 +18,16 @@ void sparkle_rainbow_all_fade()
       }
       for (int i = 0; i < 10; i++)
       {
-        leds[random_leds[i]] = CHSV(start_hue_5, 255, random(0, 255)); // Change To Random LED and change color to White
+        leds[random_leds[i]] = CHSV(start_hue, 255, random(0, 255)); // Change To Random LED and change color to White
       }
       FastLED.show();
-      FastLED.delay(STROBE_5);
+      hold(strobe);
       for (int i = 0; i < 10; i++)
       {
         leds[random_leds[i]] = CHSV(0, 0, 0); // Change To Random LED and change color to White
       }
       FastLED.show();
     }
-    start_hue_5 += delta_hue_5;
+    start_hue += delta_hue;
   }
 }

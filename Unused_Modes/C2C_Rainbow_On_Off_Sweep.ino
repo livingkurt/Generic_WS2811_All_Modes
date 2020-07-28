@@ -3,8 +3,6 @@
 #define RATE_14 10
 #define NUM_X_14 12
 
-
-
 int start_hue_14;
 int delta_hue_14 = 10;
 
@@ -21,12 +19,12 @@ void c2c_rainbow_on_off_sweep()
     // Row 3
     leds[i + ROW_14 * 2] = CHSV(start_hue_14, 255, 255);
     start_hue_14 += delta_hue_14;
-    
+
     FastLED.show();
     fadeToBlackBy(leds, NUM_LEDS, 30);
     FastLED.show();
-    FastLED.delay(STROBE_14);
-    
+    hold(STROBE_14);
+
     // Row 2
     leds[i + ROW_14 * 2] = CHSV(0, 0, 0);
     // Row 3
@@ -48,7 +46,7 @@ void c2c_rainbow_on_off_sweep()
     leds[i + ROW_14 * 7] = CHSV(start_hue_14, 255, 255);
     start_hue_14 += delta_hue_14;
     FastLED.show();
-    FastLED.delay(STROBE_14);
+    hold(STROBE_14);
     // // Row 1
     leds[ROW_14 - 1 - i] = CHSV(0, 0, 0);
     // Row 4
@@ -58,7 +56,7 @@ void c2c_rainbow_on_off_sweep()
     // Row 8
     leds[i + ROW_14 * 7] = CHSV(0, 0, 0);
     FastLED.show();
-    // FastLED.delay(STROBE_14);
+    //hold(STROBE_14);
   };
   for (int i = 0; i < ROW_14; i++)
   {
@@ -72,7 +70,7 @@ void c2c_rainbow_on_off_sweep()
     leds[ROW_14 * 12 - i - 1] = CHSV(start_hue_14, 255, 255);
     start_hue_14 += delta_hue_14;
     FastLED.show();
-    FastLED.delay(STROBE_14);
+    hold(STROBE_14);
     // Row 5
     leds[ROW_14 * 4 + i] = CHSV(0, 0, 0);
     // Row 6
@@ -82,7 +80,7 @@ void c2c_rainbow_on_off_sweep()
     // Row 12
     leds[ROW_14 * 12 - i - 1] = CHSV(0, 0, 0);
     FastLED.show();
-    // FastLED.delay(STROBE_14);
+    //hold(STROBE_14);
   };
   for (int i = 0; i < ROW_14; i++)
   {
@@ -92,13 +90,13 @@ void c2c_rainbow_on_off_sweep()
     leds[ROW_14 * 11 - 1 - i] = CHSV(start_hue_14, 255, 255);
     start_hue_14 += delta_hue_14;
     FastLED.show();
-    FastLED.delay(STROBE_14);
+    hold(STROBE_14);
     // Row 10
     leds[ROW_14 * 9 + i] = CHSV(0, 0, 0);
     // Row 11
     leds[ROW_14 * 11 - 1 - i] = CHSV(0, 0, 0);
     FastLED.show();
-    // FastLED.delay(STROBE_14);
+    //hold(STROBE_14);
   };
 
   // delay(STROBE_14);

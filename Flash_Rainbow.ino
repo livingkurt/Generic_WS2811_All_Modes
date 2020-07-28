@@ -1,22 +1,21 @@
-#define RATE_15 10
-#define STROBE_15 0.5
-#define GAP_15 10
-
-int start_hue_15;
-int delta_hue_15;
-
 void flash_rainbow()
 {
-  delta_hue_15 = 5;
-  start_hue_15 = -1 * millis() / RATE_15;
+  int rate = 10;
+  int strobe = 5;
+  int gap = 10;
+
+  int start_hue;
+  int delta_hue = 5;
+
+  start_hue = -1 * millis() / rate;
   for (int i = 0; i < NUM_LEDS; i++)
   {
-    leds[i] = CHSV(start_hue_15, 255, 100);
-    start_hue_15 += delta_hue_15;
+    leds[i] = CHSV(start_hue, 255, 255);
+    start_hue += delta_hue;
   };
+  hold(strobe);
   FastLED.show();
-  FastLED.delay(STROBE_15);
   fill_solid(leds, NUM_LEDS, CHSV(0, 0, 0));
+  hold(gap);
   FastLED.show();
-  FastLED.delay(GAP_15);
 }

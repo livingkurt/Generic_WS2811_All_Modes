@@ -1,14 +1,12 @@
-// Pattern 3
-#define GAP_3 20
-#define STROBE_3 30
+
 
 void shooting_star_white()
 {
-  Serial.println("pattern_3");
+  int strobe = 30;
   for (int i = 0; i < NUM_LEDS; i++)
   {
     leds[i] += CHSV(255, 0, 255);
-    delay(STROBE_3);
+    hold(strobe);
     fadeToBlackBy(leds, NUM_LEDS, 30);
     FastLED.show();
   }

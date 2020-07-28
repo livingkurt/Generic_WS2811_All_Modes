@@ -1,13 +1,12 @@
+// Pattern 5
 
-
-void sparkle_white_no_off()
+void sparkle_rainbow_no_off_all()
 {
-
   int strobe = 10;
   int gap = 0;
   int rate = 10;
   int start_hue;
-  int delta_hue = 5;
+  int delta_hue = 10;
   start_hue = -1 * millis() / rate;
   for (int i = 0; i < NUM_LEDS; i++)
   {
@@ -18,7 +17,7 @@ void sparkle_white_no_off()
     }
     for (int i = 0; i < NUM_LEDS * 4; i++)
     {
-      leds[random_leds[i]] = CHSV(0, 0, 200); // Change To Random LED and change color to White
+      leds[random_leds[i]] = CHSV(start_hue, 255, 200); // Change To Random LED and change color to White
       hold(strobe);
       FastLED.show();
     }

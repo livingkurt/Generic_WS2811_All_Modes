@@ -17,7 +17,7 @@ void shooting_stars()
     leds[i + 96] = CHSV(start_hue_10, 0, 255);
     start_hue_10 += delta_hue_10;
     FastLED.show();
-    delay(STROBE_10);
+    hold(STROBE_10);
     fadeToBlackBy(leds, NUM_LEDS, 200);
     FastLED.show();
   };

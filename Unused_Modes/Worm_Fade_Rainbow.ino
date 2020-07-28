@@ -15,7 +15,7 @@ void worm_fade_rainbow()
     leds[i] = CHSV(start_hue_6, 255, 255);
     start_hue_6 += delta_hue_6;
     FastLED.show();
-    delay(STROBE_6);
+    hold(STROBE_6);
     fadeToBlackBy(leds, NUM_LEDS, 30);
     FastLED.show();
   };

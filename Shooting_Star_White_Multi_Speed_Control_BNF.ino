@@ -1,8 +1,6 @@
-// Pattern 3
-#define GAP_3 5
-#define STROBE_3 30
 
-void shooting_star_white_multi_sin_bnf()
+
+void shooting_star_white_multi_speed_control_bnf()
 {
   for (int i = 0; i < 8; i++)
   {

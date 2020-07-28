@@ -1,14 +1,13 @@
-// Pattern 5
-#define STROBE_19 20
-#define GAP_19 0
-#define RATE_19 10
-int start_hue_19;
-int delta_hue_19 = 5;
+
 
 void sparkle_rainbow_saturation()
 {
-  start_hue_19 = -1 * millis() / RATE_19;
-  Serial.println("pattern_19");
+
+  int strobe = 20;
+  int rate = 10;
+  int start_hue;
+  int delta_hue = 5;
+  start_hue = -1 * millis() / rate;
   for (int i = 0; i < NUM_LEDS; i++)
   {
     for (int i = 0; i < 10; i++)
@@ -20,16 +19,16 @@ void sparkle_rainbow_saturation()
       }
       for (int i = 0; i < 10; i++)
       {
-        leds[random_leds[i]] = CHSV(start_hue_19, random(127, 255), random(0, 255)); // Change To Random LED and change color to White
+        leds[random_leds[i]] = CHSV(start_hue, random(127, 255), random(0, 255)); // Change To Random LED and change color to White
       }
       FastLED.show();
-      FastLED.delay(STROBE_19);
+      hold(strobe);
       for (int i = 0; i < 10; i++)
       {
         leds[random_leds[i]] = CHSV(0, 0, 0); // Change To Random LED and change color to White
       }
       FastLED.show();
     }
-    start_hue_19 += delta_hue_19;
+    start_hue += delta_hue;
   }
 }
