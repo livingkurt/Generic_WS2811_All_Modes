@@ -81,8 +81,10 @@ SimplePatternList gPatterns = {
     // split_shooting_star_rainbow,
     // split_shooting_star_rainbow_4,
     // split_shooting_star_rainbow_10,
-    split_shooting_star_white_10,
+    // split_shooting_star_white_10,
 
+    // flow_color_palette_simple,
+    flow_rainbow_simple,
     // flow_rainbow,
     // flow_color_palette,
 
